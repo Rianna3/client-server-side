@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+    @import "tailwindcss/base";
+    @import "tailwindcss/components";
+    @import "tailwindcss/utilities";
+    
+    
+    *{
+        margin: 0;
+        padding: 0;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        box-sizing: border-box;
+    }
+    
+    .container{
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(243, 193, 127);
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    form{
+        width: 90%;
+        max-width: 600px;
+    }
+    .input-group{
+        margin-bottom: 30px;
+        position: relative;
+    }
+    input,textarea{
+        width: 100%;
+        padding: 10px;
+        outline: 0;
+        border: 1px solid #fff;
+        color:aqua;
+        background: transparent;
+        font-size: 15px;
+    }
+    label{
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 10px;
+        color: red;
+        cursor: text;
+        transition: 0.2s;
+    }
+    button{
+        padding: 10px 0;
+        color: black;
+        outline: none;
+        background: transparent;
+        width: 100%;
+        cursor: pointer;
+    }
+    input:focus~label,
+    input:valid~label,
+    textarea:focus~label,
+    textarea:valid~label{
+        top:-35px;
+        font-size: 14px;
+    }
+    
+    @media screen and (min-width: 960px) {
+        .container {
+            width: 960px;
+            margin: 20px auto;
+        }
+    }</style>
+      </head>
+  <body>
+    <div class="container">
+      <form action="/inventions/result" method="POST">
+        <div class="input-group">
+          <input type="text" required id="id" name="id" />
+          <label for="id">Invention id</label>
+        </div>
+        <div class="input-group">
+          <input type="text" required id="name" name="name" />
+          <label for="name">Invention Name</label>
+        </div>
+        <div class="input-group">
+          <input type="text" required id="year" name="year" />
+          <label for="year">Year of discovery</label>
+        </div>
+        <div class="input-group">
+          <input type="text" required id="inventor" name="inventor" />
+          <label for="inventor">Inventors' Name</label>
+        </div>
+        <div class="input-group">
+          <textarea
+            id="brief_introduction"
+            rows="8"
+            name="brief_introduction"
+          ></textarea>
+          <label for="brief_introduction">Brief Introduction</label>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
